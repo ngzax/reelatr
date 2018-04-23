@@ -9,8 +9,14 @@ html
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
   body
-    header
-      == render 'layouts/navigation'
-    main[role="main"]
-      == render 'layouts/messages'
-      == yield
+    . class="uk-section uk-section-default"
+      . class="uk-container uk-container-small"
+        == render 'layouts/navigation'
+        == render 'layouts/messages'
+        == yield
+    . class="uk-section uk-section-secondary"
+      . class="uk-vertical-align uk-text-center uk-height-1-1"
+        . class="panel panel-info"
+          . class="uk-vertical-align-middle"
+            p
+              | Version 1 :: Copyright 2018 :: <a href="http://www.ngzax.com">Daryl Richter</a> :: All Rights Reserved.
