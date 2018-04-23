@@ -5,9 +5,8 @@ nav.uk-navbar-container uk-navbar="boundary-align: true; align: center;"
       li.uk-active
         = link_to "Users", users_path
       li
-        = link_to "Prospects", users_path
+        = link_to "Prospects", prospects_path
   .uk-navbar-right
     ul.uk-navbar-nav
       li
         = link_to "Sign Out", destroy_user_session_path, method: :delete
-</nav>
