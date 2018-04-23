@@ -1,0 +1,16 @@
+.uk-container *{class: ["uk-container-center"]}
+  h3
+    | All Users
+    - if @users.any?
+      table#users class="uk-table uk-align-center uk-table-divider uk-table-striped uk-table-hover"
+        thead
+          th
+            | Id
+          th
+            | Name
+          th
+            | Email
+        tbody
+          - @users.each do |user|
+            tr
+              == render user

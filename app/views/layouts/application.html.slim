@@ -11,13 +11,12 @@ html
   body
     .uk-container *{class: ["uk-container-small"]}
       == render 'layouts/navigation'
-    .uk-section
-      .uk-section-default
-        .uk-container *{class: ["uk-container-small"]}
-          == render 'layouts/messages'
-          == yield
-    .uk-section
-      .uk-section-secondary
+      .uk-section *{class: ["uk-section-default uk-section-small"]}
+        .uk-text-left
+          .uk-vertical-align-top
+            == render 'layouts/messages'
+            == yield
+      .uk-section *{class: ["uk-section-muted uk-section-xsmall"]}
         .uk-text-center
           .uk-vertical-align-middle
             p

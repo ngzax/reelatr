@@ -1,0 +1,14 @@
+h3
+  | Showing User ##{@user.id}
+  p
+  table#user class="uk-table uk-align-center uk-table-divider uk-table-striped uk-table-hover"
+    tr
+      th
+        | Name :
+      td
+        = @user.name.nil? ? "No Name Provided" : @user.name
+    tr
+      th
+        | Email :
+      td
+        = @user.email if @user.email
