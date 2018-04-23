@@ -1,0 +1,20 @@
+h3
+  | Showing Prospect ##{@prospect.id}
+  p
+
+  table#prospect class="uk-table uk-table-divider uk-table-striped uk-table-hover uk-table-small"
+    tr
+      th
+        | First Name :
+      td
+        = @prospect.first_name.nil? ? "No First Name Provided" : @prospect.first_name
+    tr
+      th
+        | Last Name :
+      td
+        = @prospect.last_name.nil? ? "No Last Name Provided" : @prospect.last_name
+    tr
+      th
+        | Email :
+      td
+        = @prospect.email if @prospect.email

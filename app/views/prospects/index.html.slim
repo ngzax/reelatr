@@ -1,0 +1,22 @@
+.uk-container *{class: ["uk-container-center"]}
+  h3
+    | All Prospects
+    - if @prospects.any?
+      table#prospects class="uk-table uk-table-divider uk-table-striped uk-table-hover"
+        thead
+          th
+            | Id
+          th
+            | First Name
+          th
+            | Last Name
+          th.uk-table-shrink
+            | Email
+          th.uk-table-shrink
+            | Nickname / Salutation
+          th.uk-table-expand
+            | Note
+        tbody
+          - @prospects.each do |prospect|
+            tr
+              == render prospect
