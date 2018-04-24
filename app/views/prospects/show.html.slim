@@ -1,20 +1,33 @@
 h3
   | Showing Prospect ##{@prospect.id}
   p
-
   table#prospect class="uk-table uk-table-divider uk-table-striped uk-table-hover uk-table-small"
     tr
-      th
-        | First Name :
+      th.uk-table-shrink
+        | First&nbsp;Name:
       td
         = @prospect.first_name.nil? ? "No First Name Provided" : @prospect.first_name
     tr
       th
-        | Last Name :
+        | Last Name:
       td
         = @prospect.last_name.nil? ? "No Last Name Provided" : @prospect.last_name
     tr
       th
-        | Email :
+        | Email:
       td
         = @prospect.email if @prospect.email
+    tr
+      th
+        | Nickname/Salutation:
+      td
+        = @prospect.nickname if @prospect.nickname
+    tr
+      th
+        | Note:
+      td
+        = @prospect.note if @prospect.note
+  p
+    = @prospect.previous.nil? ? "Previous" : link_to("Previous", @prospect.previous)
+    |&nbsp;|&nbsp;
+    = @prospect.next.nil? ? "Next" : link_to("Next", @prospect.next)
