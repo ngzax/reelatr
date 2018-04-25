@@ -1,8 +1,8 @@
 .uk-container *{class: ["uk-container-center"]}
   h3
-    | All Prospects
-    - if @prospects.any?
-      table#prospects class="uk-table uk-table-divider uk-table-striped uk-table-hover"
+    | All Contacts
+    - if @contacts.any?
+      table#contacts class="uk-table uk-table-divider uk-table-striped uk-table-hover"
         thead
           th
             | Id
@@ -17,6 +17,6 @@
           th.uk-table-expand
             | Note
         tbody
-          - @prospects.each do |prospect|
+          - @contacts.each do |contact|
             tr
-              == render prospect
+              == render contact

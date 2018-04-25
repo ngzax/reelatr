@@ -3,7 +3,7 @@ nav.uk-navbar-container uk-navbar="boundary-align: true; align: center;"
     a uk-icon="icon: home" href="/"
     ul.uk-navbar-nav
       li.uk-active
-        = link_to "Prospects", prospects_path
+        = link_to "Contacts", contacts_path
   .uk-navbar-right
     ul.uk-navbar-nav
       - if current_user.try(:admin?)

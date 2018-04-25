@@ -1,4 +1,4 @@
-class Prospect < ApplicationRecord
+class Contact < ApplicationRecord
   def previous
     self.class.where("id < #{self.id}").order("id desc").first
   end
