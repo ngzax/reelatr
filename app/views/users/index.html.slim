@@ -4,13 +4,8 @@
     - if @users.any?
       table#users class="uk-table uk-table-divider uk-table-striped uk-table-hover"
         thead
-          th
-            | Id
-          th
-            | Name
-          th
-            | Email
+          == render "user_v_h"
         tbody
           - @users.each do |user|
             tr
-              == render user
+              == render "user_v", user: user

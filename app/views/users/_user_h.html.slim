@@ -1,0 +1,10 @@
+tr
+  th
+    | Name :
+  td
+    = user.name.nil? ? "No Name Provided" : user.name
+tr
+  th
+    | Email :
+  td
+    = user.email if @user.email
