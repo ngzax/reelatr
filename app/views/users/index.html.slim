@@ -4,8 +4,8 @@
     - if @users.any?
       table#users class="uk-table uk-table-divider uk-table-striped uk-table-hover"
         thead
-          == render "user_v_h"
+          == render "user_hz_hd"
         tbody
           - @users.each do |user|
             tr
-              == render "user_v", user: user
+              == render "user_hz", user: user
