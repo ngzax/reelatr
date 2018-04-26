@@ -2,31 +2,7 @@ h3
   | Showing Contact ##{@contact.id}
   p
   table#contact class="uk-table uk-table-divider uk-table-striped uk-table-hover uk-table-small"
-    tr
-      th.uk-table-shrink
-        | First&nbsp;Name:
-      td
-        = @contact.first_name.nil? ? "No First Name Provided" : @contact.first_name
-    tr
-      th
-        | Last Name:
-      td
-        = @contact.last_name.nil? ? "No Last Name Provided" : @contact.last_name
-    tr
-      th
-        | Email:
-      td
-        = @contact.email if @contact.email
-    tr
-      th
-        | Nickname/Salutation:
-      td
-        = @contact.nickname if @contact.nickname
-    tr
-      th
-        | Note:
-      td
-        = @contact.note if @contact.note
+    == render "contact_vt", contact: @contact
   p
     = @contact.previous.nil? ? "Previous" : link_to("Previous", @contact.previous)
     |&nbsp;|&nbsp;

@@ -1,0 +1,50 @@
+tr
+  th.uk-table-shrink
+    | First&nbsp;Name&nbsp;:
+  td
+    = contact.first_name.nil? ? "No First Name Provided" : contact.first_name
+tr
+  th
+    | Last&nbsp;Name&nbsp;:
+  td
+    = contact.last_name.nil? ? "No Last Name Provided" : contact.last_name
+tr
+  th
+    | Email&nbsp;:
+  td
+    = contact.email if contact.email
+tr
+  th
+    | Nickname/Salutation&nbsp;:
+  td
+    = contact.nickname if contact.nickname
+tr
+  th
+    | Address&nbsp;:
+  td
+    = contact.address
+tr
+  th
+    | City&nbsp;:
+  td
+    = contact.city
+tr
+  th
+    | State&nbsp;:
+  td
+    = contact.state
+tr
+  th
+    | Zip&nbsp;:
+  td
+    = contact.zip
+tr
+  th
+    | Note&nbsp;:
+  td
+    = contact.note? ? contact.note : "No notes yet."
+tr
+  th
+    | Actions&nbsp;:
+  td
+    = link_to "Edit", edit_contact_path(contact)

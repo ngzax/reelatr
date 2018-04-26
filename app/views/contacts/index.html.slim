@@ -4,19 +4,8 @@
     - if @contacts.any?
       table#contacts class="uk-table uk-table-divider uk-table-striped uk-table-hover"
         thead
-          th
-            | Id
-          th
-            | First Name
-          th
-            | Last Name
-          th.uk-table-shrink
-            | Email
-          th.uk-table-shrink
-            | Nickname / Salutation
-          th.uk-table-expand
-            | Note
+          == render "contact_hz_hd"
         tbody
           - @contacts.each do |contact|
             tr
-              == render contact
+              == render "contact_hz", contact: contact

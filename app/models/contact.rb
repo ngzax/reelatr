@@ -1,4 +1,5 @@
 class Contact < ApplicationRecord
+
   def previous
     self.class.where("id < #{self.id}").order("id desc").first
   end
@@ -6,4 +7,9 @@ class Contact < ApplicationRecord
   def next
     self.class.where("id > #{self.id}").order("id asc").first
   end
+
+  def to_s
+    "#{self.first_name} #{self.last_name}"
+  end
+
 end

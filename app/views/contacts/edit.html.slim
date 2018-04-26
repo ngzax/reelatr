@@ -1,0 +1,50 @@
+h3
+  | Editing #{params[:controller].singularize.titleize} "#{@contact.to_s}"
+= form_with(model: @contact, local: true, html: {class: "uk-form-horizontal"}) do |form|
+  .uk-margin
+    label.uk-form-label for="first_name"
+      | First Name :
+    .uk-form-controls
+      = form.text_field :first_name, {class: "uk-input uk-form-width-medium"}
+  .uk-margin
+    label.uk-form-label for="last_name"
+      | Last Name :
+    .uk-form-controls
+      = form.text_field :last_name, {class: "uk-input uk-form-width-medium"}
+  .uk-margin
+    label.uk-form-label for="email"
+      | Email:
+    .uk-form-controls
+      = form.text_field :email, {class: "uk-input uk-form-width-medium"}
+  .uk-margin
+    label.uk-form-label for="nickname"
+      | Nickname/Salutation :
+    .uk-form-controls
+      = form.text_field :nickname, {class: "uk-input uk-form-width-medium"}
+  .uk-margin
+    label.uk-form-label for="address"
+      | Address :
+    .uk-form-controls
+      = form.text_field :address, {class: "uk-input uk-form-width-medium"}
+  .uk-margin
+    label.uk-form-label for="city"
+      | City :
+    .uk-form-controls
+      = form.text_field :city, {class: "uk-input uk-form-width-medium"}
+  .uk-margin
+    label.uk-form-label for="state"
+      | State :
+    .uk-form-controls
+      = form.text_field :state, {class: "uk-input uk-form-width-small"}
+  .uk-margin
+    label.uk-form-label for="zip"
+      | Zip :
+    .uk-form-controls
+      = form.text_field :zip, {class: "uk-input uk-form-width-small"}
+  .uk-margin
+    .uk-form-controls
+      .uk-flex *{class: ["uk-flex-bottom uk-text-center"]}
+        .
+          = form.submit "Save", class: "uk-button uk-button-primary"
+        .uk-margin-left
+          = form.submit "Cancel", class: "uk-button uk-button-secondary uk-button-small"
