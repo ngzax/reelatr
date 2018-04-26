@@ -14,7 +14,7 @@ class User < ApplicationRecord
   end
 
   def to_s
-    #{self.name}
+    "#{self.name}"
   end
 
 end

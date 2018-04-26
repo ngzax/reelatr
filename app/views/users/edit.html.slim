@@ -1,17 +1,20 @@
-.uk-container  *{class: ["uk-container-center uk-margin-top"]}
-  h3
-    | Editing #{params[:controller].singularize.titleize} "#{@user.to_s}"
-  = form_with(model: @user, local: true, html: {class: "uk-form"}) do |form|
-    fieldset.uk-form-horizontal
-      .uk-margin
-        label.uk-form-label for="name"
-          | Name:
-        .uk-form-controls
-          = form.text_field :name, {class: "uk-input uk-form-width-medium"}
-      .uk-margin
-        label.uk-form-label for="email"
-          | Email:
-        .uk-form-controls
-          = form.text_field :email, {class: "uk-input uk-form-width-medium"}
-      .uk-margin
-        = form.submit "Save", class: "uk-button uk-button-primary"
+h3
+  | Editing #{params[:controller].singularize.titleize} "#{@user.to_s}"
+= form_with(model: @user, local: true, html: {class: "uk-form-horizontal"}) do |form|
+  .uk-margin
+    label.uk-form-label for="name"
+      | Name:
+    .uk-form-controls
+      = form.text_field :name, {class: "uk-input uk-form-width-medium"}
+  .uk-margin
+    label.uk-form-label for="email"
+      | Email:
+    .uk-form-controls
+      = form.text_field :email, {class: "uk-input uk-form-width-medium"}
+  .uk-margin
+    .uk-form-controls
+      .uk-flex *{class: ["uk-flex-bottom uk-text-center"]}
+        .
+          = form.submit "Save", class: "uk-button uk-button-primary"
+        .uk-margin-left
+          = form.submit "Cancel", class: "uk-button uk-button-secondary uk-button-small"

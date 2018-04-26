@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :redirect_cancel, only: [:create, :update]
 
   def edit
     @user = User.find(params[:id])
@@ -29,6 +30,12 @@ class UsersController < ApplicationController
         render :action => :edit and return
       end
     end
+  end
+
+  private
+
+  def redirect_cancel
+    redirect_to(action: :show, id: params[:id]) if params[:commit] == "Cancel"
   end
 
 end

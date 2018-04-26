@@ -1,5 +1,6 @@
 h3
   | Showing User ##{@user.id}
   p
-  table#user class="uk-table uk-align-center uk-table-divider uk-table-striped uk-table-hover"
-    == render "user_vt", user: @user
+  .uk-container
+    table#user class="uk-table uk-table-divider uk-table-striped uk-table-hover uk-table-small"
+      == render "user_vt", user: @user
