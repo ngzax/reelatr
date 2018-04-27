@@ -21,7 +21,7 @@ class ContactsController < ApplicationController
 
     if params[:contact]
       if @contact.update_attributes(params[:contact])
-        flash[:notice] = "User was successfully updated!"
+        flash[:notice] = "Contact was successfully updated!"
         redirect_to :action => :show, :id => @contact and return
       else
         render :action => :edit and return
