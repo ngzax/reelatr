@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    redirect_to action: :show, id: current_user.id unless current_user.try(:admin?)
     @users = User.all
   end
 

@@ -1,11 +1,12 @@
 .uk-container *{class: ["uk-container-center"]}
-  h3
-    | All Contacts
-    - if @contacts.any?
-      table#contacts class="uk-table uk-table-divider uk-table-striped uk-table-hover"
-        thead
-          == render "contact_hz_hd"
-        tbody
-          - @contacts.each do |contact|
-            tr
-              == render "contact_hz", contact: contact
+  h3 All Contacts
+  - if @contacts.any?
+    table#contacts class="uk-table uk-table-divider uk-table-striped uk-table-hover"
+      thead
+        == render "contact_hz_hd"
+      tbody
+        - @contacts.each do |contact|
+          tr
+            == render "contact_hz", contact: contact
+  - else
+    p You don't have any contacts yet.

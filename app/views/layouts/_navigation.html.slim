@@ -13,8 +13,8 @@ nav.uk-navbar-container uk-navbar="boundary-align: true; align: center;"
         li
           = link_to "Sign Out", destroy_user_session_path, method: :delete
       - else
-          li
-            = link_to "Sign In", new_user_session_path
-            - if devise_mapping.registerable?
-              li
-                = link_to 'Sign up', new_registration_path(resource_name)
+        li
+          = link_to "Sign In", new_user_session_path
+          - if devise_mapping.registerable?
+            li
+              = link_to 'Sign up', new_registration_path(resource_name)
