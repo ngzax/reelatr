@@ -1,0 +1,26 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "uk-form-horizontal", role: "form"}) do |form|
+  h3 Sign in
+  = devise_error_messages!
+  .uk-margin
+    label.uk-form-label for="email"
+      | Email:
+    .uk-form-controls
+      = form.text_field :email, {class: "uk-input uk-form-width-medium", autofocus: true}
+  .uk-margin
+    label.uk-form-label for="password"
+      | Password:
+    .uk-form-controls
+      = form.password_field :password, {class: "uk-input uk-form-width-medium uk-form-password"}
+  .uk-margin
+    .uk-form-controls
+      .uk-flex *{class: ["uk-flex-bottom uk-text-center"]}
+        .
+          = form.submit "Sign In", class: "uk-button uk-button-primary"
+  - if devise_mapping.rememberable?
+    .uk-margin
+      label.uk-form-label for="remember_me"
+        | Remember me?
+      .uk-form-controls
+        = form.check_box :remember_me
+  - if devise_mapping.recoverable?
+    = link_to "Forgot password?", new_password_path(resource_name), class: 'right'
