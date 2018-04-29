@@ -4,3 +4,10 @@ h5
   | Your Real Estate Contact Management Solution
 p
   | There are currently #{User.count} registered realtors.
+- unless current_user
+  p
+    | Are you one of them?
+    = link_to " Please Sign In", new_user_session_path
+  p
+    | If you're not but would like to be:
+    = link_to " Sign up", new_registration_path(User)
