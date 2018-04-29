@@ -5,14 +5,16 @@ class ContactsController < ApplicationController
 
   def edit
     @contact = Contact.find(params[:id])
+    validate_user
   end
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.all.where(user_id: current_user)
   end
 
   def show
     @contact = Contact.find(params[:id])
+    validate_user
   end
 
   def update
@@ -33,6 +35,13 @@ class ContactsController < ApplicationController
 
   def redirect_cancel
     redirect_to(action: :show, id: params[:id]) if params[:commit] == "Cancel"
+  end
+
+  def validate_user
+    if @contact.user_id != current_user.id
+      flash[:error] = "There is no contact with that Id"
+      redirect_to action: :index and return
+    end
   end
 
 end
