@@ -1,5 +1,7 @@
 class Contact < ApplicationRecord
 
+  belongs_to :user
+
   def previous
     self.class.where("id < #{self.id}").order("id desc").first
   end

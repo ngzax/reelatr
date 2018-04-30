@@ -9,6 +9,8 @@ class User < ApplicationRecord
   after_initialize :set_default_role, :if => :new_record?
   validates_presence_of :email
 
+  has_many :contacts
+
   def set_default_role
     self.role ||= :user
   end
