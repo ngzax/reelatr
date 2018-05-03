@@ -42,6 +42,11 @@ h3
     .uk-form-controls
       = form.text_field :zip, {class: "uk-input uk-form-width-small"}
   .uk-margin
+    label.uk-form-label for="note"
+      | Note :
+    .uk-form-controls
+      = form.text_area(:note, rows: 5, class: "uk-textarea uk-form-width-large")
+  .uk-margin
     .uk-form-controls
       .uk-flex *{class: ["uk-flex-bottom uk-text-center"]}
         .
