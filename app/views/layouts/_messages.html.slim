@@ -1,6 +1,5 @@
 / Rails flash messages
 - flash.each do |name, msg|
   - if msg.is_a?(String)
-    .uk-alert *{class: "uk-alert-#{name.to_s == 'notice' ? 'success' : 'danger'}"}
-      .uk-alert-close
-      = content_tag :div, msg, :id => "flash_#{name}"
+    .uk-alert *{class: ["uk-alert-#{name.to_s == 'notice' ? 'success' : 'danger'}"]}
+      p #{msg}

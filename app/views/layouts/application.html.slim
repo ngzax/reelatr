@@ -12,10 +12,9 @@ html
     .uk-container *{class: ["uk-container-medium"]}
       == render 'layouts/navigation'
       .uk-section *{class: ["uk-section-default uk-section-small"]}
-        .uk-text-left
-          .uk-vertical-align-top
-            == render 'layouts/messages'
-            == yield
+        .uk-vertical-align-top
+          == render 'layouts/messages'
+          == yield
       .uk-section *{class: ["uk-section-muted uk-section-xsmall"]}
         .uk-text-center
           .uk-vertical-align-middle
