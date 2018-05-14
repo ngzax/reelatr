@@ -3,6 +3,18 @@ class ContactsController < ApplicationController
   before_action :authenticate_user!
   before_action :redirect_cancel, only: [:create, :update]
 
+  def create
+    params.permit!
+    @contact = Contact.new(params[:contact])
+    @contact.user_id = current_user.id
+    if @contact.save
+      flash[:notice] = "Contact was successfully created!"
+      redirect_to :action => :index
+    else
+      render :action => :new
+    end
+  end
+
   def edit
     @contact = Contact.find(params[:id])
     validate_user
@@ -10,6 +22,10 @@ class ContactsController < ApplicationController
 
   def index
     @contacts = Contact.all.where(user_id: current_user)
+  end
+
+  def new
+    @contact = Contact.new
   end
 
   def show
@@ -34,7 +50,8 @@ class ContactsController < ApplicationController
   private
 
   def redirect_cancel
-    redirect_to(action: :show, id: params[:id]) if params[:commit] == "Cancel"
+    redirect_to(action: :show, id: params[:id]) if params[:commit] == "Cancel" && params[:id]
+    redirect_to(action: :index)
   end
 
   def validate_user

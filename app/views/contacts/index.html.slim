@@ -1,5 +1,9 @@
 .uk-container *{class: ["uk-container-center"]}
-  h3 All Contacts
+  .uk-flex *{class: ["uk-flex-between"]}
+    .
+      h3 All Contacts
+    .
+      = link_to "Add a Contact", new_contact_path, class: "uk-button uk-button-primary uk-button-small"
   - if @contacts.any?
     table#contacts class="uk-table uk-table-divider uk-table-striped uk-table-hover"
       thead
